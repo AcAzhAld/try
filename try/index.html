@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AFKH IYH</title>
+</head>
+<body>
+	<!-- <form action=""> -->
+	<div id="halamanForm">
+		<h1>Masukkan ID dan Nama</h1>
+		<div>
+			<input id="nomor" type="text" placeholder="NIK">
+			<input id="name" type="text" placeholder="Nama">
+			<button onclick="proses();">Simpan</button>
+		</div>
+	</div>
+	<!-- </form> -->
+	<script>
+		function proses(){
+			const pilih = confirm("AFKH BTUL ?");
+
+			if(pilih === true){
+				const id = document.getElementById("nomor").value;
+				const jenengku = document.getElementById("name").value;
+
+				const searchParams = new URLSearchParams({
+					nomor : id,
+					name : jenengku,
+				});
+				window.location.href = "detail.html?" + searchParams.toString();
+			} else {
+				alert("Oke")
+			}			
+		}
+	</script>
+</body>
+</html>
